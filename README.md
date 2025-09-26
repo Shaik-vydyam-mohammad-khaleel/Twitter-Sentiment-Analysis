@@ -1,49 +1,69 @@
-# Twitter-Sentiment-Analysis
+Twitter Sentiment Analysis
+A Python-based tool to analyze the sentiment of tweets related to a specific keyword or hashtag. This script fetches live tweets, processes them to determine sentiment, and visualizes the results in a pie chart.
 
-This script can tell you the sentiments of people regarding to any events happening in the world by analyzing tweets related to that event. It will search for tweets about any topic and analyze each tweet to see how positive or negative it's emotion is. You might want to check out this complete text and video based detailed [tutorial link](http://www.letscodepro.com/Twitter-Sentiment-Analysis/)
+Features
+Live Data Fetching: Connects to the Twitter API to download a specified number of recent tweets.
 
-![alt text](http://www.letscodepro.com/wp-content/uploads/2017/09/TwitterSentimentAnalysis.png)
+Sentiment Classification: Utilizes TextBlob to classify each tweet into categories: Strongly Positive, Positive, Weakly Positive, Neutral, Weakly Negative, Negative, and Strongly Negative.
 
+Data Cleaning: Includes a function to clean tweets by removing mentions, links, and special characters before analysis.
 
-## Getting Started
- 
-First of all login from your Twitter account and goto [Twitter Apps](https://apps.twitter.com/). Create a new app ([How to create twitter app](http://www.letscodepro.com/twitter-sentiment-analysis/)) and goto __Keys and access tokens__ and copy Consumer Key, Consumer Secret, Access Token and Access Token Secret. We will need them later. 
+Data Visualization: Generates a matplotlib pie chart to provide an immediate visual summary of the public's reaction.
 
-### Installation
+Reporting: Outputs both a general sentiment report (e.g., "Positive") and a detailed breakdown of the percentages for each category.
 
-Download or Clone the repo, Navigate to the directory containing the files and run
-```
-python setup.py install
-```
-or if you have different versions of python installed then
-```
-python3 setup.py install 
-```
-to install the dependencies.
+Technology Stack
+Language: Python
 
+Libraries:
 
-### Usage
+tweepy: For accessing the Twitter API.
 
-Once you have created an app on twitter and installed all the dependencies by running __setup.py__, open main.py and paste your Consumer Key, Consumer Secret, Access Token and Access Token Secret. After that save and run the script. You will be prompted to enter the keyword/hashtag you want to analyze and the number of tweets you want to analyze. Once the analysis is completed, a pie chart will be generated disclosing the results of analysis.
+textblob: For performing sentiment analysis.
 
-## Built With
+matplotlib: For data visualization and plotting the pie chart.
 
-* Python 3.6
-* tweepy
-* textblob
-* matplotlib
+re (Regex): For cleaning tweet text.
 
-## Contributing
+Setup and Installation
+To run this project on your local machine, follow these steps.
 
-1. Fork it
-2. Create your feature branch: git checkout -b my-new-feature
-3. Commit your changes: git commit -am 'Add some feature'
-4. Push to the branch: git push origin my-new-feature
-5. Submit a pull request
+1. Clone the Repository
 
+Bash
 
+git clone <your-github-repo-url>
+cd <repository-name>
+2. Install Dependencies
+Make sure you have Python 3 installed. Then, install the required libraries using pip.
 
-## License
+Bash
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/the-javapocalypse/Twitter-Sentiment-Analysis/blob/master/License.txt) file for details
+pip install tweepy textblob matplotlib
+3. Configure Twitter API Credentials
+You need to have a Twitter Developer account to get API keys and access tokens.
 
+Open the sentiment_analysis.py file in a text editor.
+
+Find the DownloadData method.
+
+Replace the placeholder values for consumerKey, consumerSecret, accessToken, and accessTokenSecret with your own Twitter API credentials.
+
+Python
+
+# authenticating
+consumerKey = 'your key here'
+consumerSecret = 'your key here'
+accessToken = 'your key here'
+accessTokenSecret = 'your key here'
+How to Use
+Once the setup is complete, you can run the script from your terminal.
+
+Bash
+
+python sentiment_analysis.py
+The script will then prompt you to enter a search term and the number of tweets you wish to analyze.
+
+Enter Keyword/Tag to search about: Python
+Enter how many tweets to search: 100
+After fetching and analyzing the tweets, the script will print a summary to the console and display a pie chart visualizing the sentiment distribution.
